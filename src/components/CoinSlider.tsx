@@ -31,13 +31,14 @@ export function CoinSlider() {
     };
 
     return (
-        <>
+        <div className="bg-white p-4 rounded-md">
+        
             <Slider {...carouselSettings}>
                 {trendingCoins.map((coin:any) => (
                     <Card key={coin.item.id} coin={coin} />
                 ))}
             </Slider>
-        </>
+        </div>
     );
 }
 
@@ -45,18 +46,18 @@ export function CoinSlider() {
 
 function Card({ coin }: any) {
     return (
-        <div>
-            <div className='flex'>
-                {coin.item.thumb}
-                {coin.item.symbol}
+        <div className='border border-slate-300 flex flex-col justify-center mx-4 rounded-md p-2 '>
+            <div className='flex justify-start items-center'>
+            <img className="w-6 h-6 mr-2" src={coin.item.thumb}></img>
+                <div className='text-xs mr-2'>{coin.item.symbol}</div>
                 <div>
                     {(coin.item.data.price_change_percentage_24h.inr > 0) ?
-                        <button type="button" className="px-2 py-2 text-xs font-medium text-center text-green-700 bg-green-200 rounded-lg flex">
+                        <button type="button" className="px-1 py-1 text-xs font-medium text-center text-green-700 bg-green-200 rounded-lg flex">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
                             </svg>{coin.item.data.price_change_percentage_24h.inr.toFixed(2)}
                         </button> :
-                        <button type="button" className="px-2 py-2 text-xs font-medium text-center text-red-700 bg-red-200 rounded-lg flex ">
+                        <button type="button" className="px-1 py-1 text-xs font-medium text-center text-red-700 bg-red-200 rounded-lg flex ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
@@ -65,9 +66,10 @@ function Card({ coin }: any) {
                     }
                 </div>
             </div>
-
-            {coin.item.data.sparkline}
+            <div className='text-lg font-semibold'>  
             {coin.item.data.price}
+            </div>
+            <img src={coin.item.data.sparkline} />
         </div>
     );
 }

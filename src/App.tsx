@@ -11,10 +11,12 @@ import { Footer } from './components/Footer';
 function App() {
   return (
     <RecoilRoot>
+      <div className='felx flex-col'>
       <Appbar />
       <MiddleComponent />
       <div className="footer" >
       <Footer />
+      </div>
       </div>
 
     </RecoilRoot>
