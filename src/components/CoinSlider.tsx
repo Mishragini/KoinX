@@ -7,6 +7,7 @@ import { trendingCoinState } from "../stateManagement/atom";
 
 export function CoinSlider() {
     const trendingCoins = useRecoilValue(trendingCoinState);
+    console.log(trendingCoins);
 
     const carouselSettings = {
         dots: false,
@@ -66,7 +67,7 @@ function Card({ coin }: any) {
                 </div>
             </div>
             <div className='text-lg font-semibold'>  
-            {coin.item.data.price}
+            {coin.item.data.price.split('<')[0]}
             </div>
             <img src={coin.item.data.sparkline} />
         </div>
