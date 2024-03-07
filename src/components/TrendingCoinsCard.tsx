@@ -1,14 +1,15 @@
 import { useRecoilState } from "recoil";
 import { trendingCoinState } from "../stateManagement/atom"; // Import the Coin type or use the actual type definition
 import { useEffect } from "react";
-import { API_KEY, COINGECKO_URL } from "../config";
+const API_KEY=import.meta.env.VITE_API_KEY;
+const COINGECKO_URL=import.meta.env.VITE_COINGECKO_URL;  
+
 import axios from "axios";
 
 export function TrendingCoinCard() {
     const[trendingCoins, setTrendingCoins]=useRecoilState(trendingCoinState)
   async function fetchTrendingCoins(){
     const res=await axios.get(`${COINGECKO_URL}/search/trending?x_cg_demo_api_key=${API_KEY}`)
-    console.log(res);
     setTrendingCoins(res.data.coins);
   }
    useEffect(()=>{
