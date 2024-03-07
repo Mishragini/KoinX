@@ -1,7 +1,7 @@
 import circularChartsvg from "../assets/circularChart.svg"
 export function Tockeconomics(){
     return(
-        <div id="tokeconomics" className="bg-white my-4 mx-4 p-4 rounded-md">
+        <div id="tokeconomics" className="hidden md:block bg-white my-4 mx-4 p-4 rounded-md">
             <div className="text-2xl font-semibold my-4 mx-4">Tockeconomics</div>
             <div className="text-xl font-semibold my-4 mx-4">
              Initial Distribution

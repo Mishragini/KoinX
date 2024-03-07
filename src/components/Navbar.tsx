@@ -1,11 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export function Navbar() {
   const sliderRef = useRef<Slider>(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const onHoverStyle = 'hover:text-blue-500 hover:underline';
 
@@ -34,30 +35,29 @@ export function Navbar() {
     }
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div className="mx-4" onWheel={handleWheel}>
       <Slider {...sliderSettings} ref={sliderRef}>
-        <AnchorLink href="#performance">
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Overview</div>
-        </AnchorLink>
-        <AnchorLink href="#fundamentals">
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Fundamentals</div>
-        </AnchorLink>
-        <AnchorLink href='#newinsights'>
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>New insights</div>
-        </AnchorLink>
-        <AnchorLink href="#sentiments">
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Sentiments</div>
-        </AnchorLink>
-        <AnchorLink href="#team">
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Team</div>
-        </AnchorLink>
-        <AnchorLink href="#technicals">
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Technicals</div>
-        </AnchorLink>
-        <AnchorLink href="#tokeconomics">
-          <div className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Tokeconomics</div>
-        </AnchorLink>
+        <AnchorLink href="#performance" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Overview</AnchorLink>
+        <AnchorLink href="#fundamentals" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Fundamentals</AnchorLink>
+        <AnchorLink href='#newinsights' className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>New insights</AnchorLink>
+        <AnchorLink href="#sentiments" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Sentiments</AnchorLink>
+        <AnchorLink href="#team" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Team</AnchorLink>
+        <AnchorLink href="#technicals" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Technicals</AnchorLink>
+
+        <AnchorLink href="#tokeconomics" className={`invisible md:visible text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Tokeconomics</AnchorLink>
       </Slider>
       <hr className="bg-slate-500"></hr>
     </div>
