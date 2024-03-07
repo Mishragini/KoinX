@@ -31,14 +31,13 @@ export function CoinSlider() {
     };
 
     return (
-        <div className="bg-white p-4 rounded-md">
         
             <Slider {...carouselSettings}>
                 {trendingCoins.map((coin:any) => (
                     <Card key={coin.item.id} coin={coin} />
                 ))}
             </Slider>
-        </div>
+        
     );
 }
 
@@ -46,7 +45,7 @@ export function CoinSlider() {
 
 function Card({ coin }: any) {
     return (
-        <div className='border border-slate-300 flex flex-col justify-center mx-4 rounded-md p-2 '>
+        <div  className='border border-slate-300 flex flex-col justify-center mx-4 rounded-md p-2 '>
             <div className='flex justify-start items-center'>
             <img className="w-6 h-6 mr-2" src={coin.item.thumb}></img>
                 <div className='text-xs mr-2'>{coin.item.symbol}</div>

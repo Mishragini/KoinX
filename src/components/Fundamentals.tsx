@@ -1,8 +1,8 @@
 export function Fundamentals(){
 return(
-    <>
+    <div id="fundamentals">
     <div className="text-slate-700 text-lg font-semibold my-4 mt-4">Fundamentals</div>
-    <div className="flex justify-between mb-4 mt-4 mx-6">
+    <div className=" md:flex justify-between mb-4 mt-4 mx-6">
     <div>
         <div className="flex justify-between mb-4 mt-4">
             <div className="text-slate-500 text-sm mr-6">Bitcoin Price</div>
@@ -69,6 +69,6 @@ return(
 
     </div>
     </div>
-    </>
+    </div>
 )
 }

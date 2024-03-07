@@ -3,7 +3,7 @@ import elinasvg from "../assets/elina.svg";
 import john2svg from "../assets/john2.svg";
 export function Team(){
     return(
-        <div className="bg-white my-4 mx-4 p-4 rounded-md">
+        <div id="team" className="bg-white my-4 mx-4 p-4 rounded-md">
             <div className="text-2xl font-semibold mb-2">Team</div>
             <div className="text-lg text-slate-700 my-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum, numquam repellat dolore nesciunt laboriosam sunt quam laborum? Doloremque quidem animi repudiandae neque, omnis quas veritatis nam ipsam non officia labore!</div>
             <TeamMate name="John Smith" svg={john1svg} />
@@ -18,10 +18,10 @@ interface teamMateProps{
 }
 function TeamMate({name,svg}:teamMateProps){
     return(
-        <div className="bg-blue-200 p-4 my-4 rounded-md">
-            <div className="flex">
-                <div className="mr-2 w-1/2">
-                    <img src={svg} className="logo mr--4" alt="pfp" />
+        <div className="bg-blue-200 p-4 my-4 rounded-md justify-center items-center">
+            <div className="flex flex-col justify-center items-center md:flex-row">
+                <div className="md:mr-2 w-1/2">
+                    <img src={svg} className="logo md:mr-4" alt="pfp" />
                     <div className="text-md font-semibold">{name}</div>
                     <div className="text-xs text-gray-500">Designation here</div>
                 </div>

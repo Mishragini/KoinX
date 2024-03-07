@@ -2,7 +2,7 @@ import { Fundamentals } from "./Fundamentals";
 
 export function PerformanceCard(){
     return(
-        <div className="bg-white my-4 mx-3 p-4 rounded-md">
+        <div id="performance" className="bg-white my-4 mx-3 p-4 rounded-md">
             <div className="text-xl font-semibold mb-2">Performance</div>
             <div className="flex justify-between items-center mx-8 mb-10">
                 <div className="">

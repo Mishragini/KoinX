@@ -1,9 +1,9 @@
 body{
     background-color:#eff2f5;
+  
 }
-#footer {
-    bottom: 0;
-    color: #ffffff;
-    left: 0;
-    position: relative; 
-}
+
+.active-link {
+    color: blue;
+    text-decoration: underline;
+  }

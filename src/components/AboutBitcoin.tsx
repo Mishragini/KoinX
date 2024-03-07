@@ -4,10 +4,10 @@ import abouBitcoinsvgTwo from "../assets/aboutBitcoinsvgTwo.svg";
 
 export function AbouBitcoin(){
     return(
-        <div className="bg-white my-4 mx-3 p-4 rounded-md">
-            <div className="text-xl font-bold mb-2">About Bitcoin</div>
+        <div id="newinsights"className="bg-white my-4 mx-3 p-4 rounded-md">
+            <div className="text-2xl font-semibold mb-2">About Bitcoin</div>
             <div>
-            <div className="text-lg font-bold mb-2">
+            <div className="text-xl font-semibold mb-2">
             What is Bitcoin?
             </div>
             <div className="mb-4">
@@ -16,7 +16,7 @@ export function AbouBitcoin(){
             </div>
             <hr></hr>
             <div>
-            <div className="text-lg font-bold my-2">
+            <div className="text-xl font-semibold my-2">
             Lorem ipsum dolor sit amet
             </div>
             <div className="mb-4">
@@ -41,9 +41,9 @@ export function AbouBitcoin(){
             </div>
             </div>
             <hr></hr>
-            <div className="text-xl font-bold my-2">Already holding Bitcoin?</div>
-            <div className="flex justify-between items-center">
-                <div className="w-full bg-gradient-to-br from-green-500 to-blue-500 flex items-center p-8 rounded-md mr-2">
+            <div className="text-xl font-semibold my-2">Already holding Bitcoin?</div>
+            <div className="md:flex justify-between items-center my-4">
+                <div className="w-full bg-gradient-to-br from-green-500 to-blue-500 flex items-center p-8 rounded-md mr-2 my-4">
                 <img src={abouBitcoinsvgOne} className="logo mr-4" alt="bitcoin"  />
                 
                  <div>

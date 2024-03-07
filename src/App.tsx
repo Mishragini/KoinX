@@ -13,10 +13,9 @@ function App() {
     <RecoilRoot>
       <div className='felx flex-col'>
       <Appbar />
+      <div className='text-xs text-slate-500 mx-4 mt-4'>Cryptocurrencies {'>>'} <span className='text-black'>Bitcoin</span></div>
       <MiddleComponent />
-      <div className="footer" >
       <Footer />
-      </div>
       </div>
 
     </RecoilRoot>

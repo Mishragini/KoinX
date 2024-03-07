@@ -17,7 +17,7 @@ export function TrendingCoinCard() {
   const topThreeCoins = trendingCoins.slice(0, 3);
 
   return (
-    <div className="bg-white flex flex-col p-4 mx-5 rounded-lg">
+    <div className="bg-white flex flex-col p-4 mx-5 my-4 rounded-lg">
     <div className="text-xl font-bold mb-2">Trending Coins (24h)</div>
 
       {topThreeCoins.map((coin:any) => (

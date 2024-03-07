@@ -1,9 +1,9 @@
 import circularChartsvg from "../assets/circularChart.svg"
 export function Tockeconomics(){
     return(
-        <div className="bg-white my-4 mx-4 p-4 rounded-md">
-            <div className="text-2xl font-bold my-4 mx-4">Tockeconomics</div>
-            <div className="text-xl font-bold my-4 mx-4">
+        <div id="tokeconomics" className="bg-white my-4 mx-4 p-4 rounded-md">
+            <div className="text-2xl font-semibold my-4 mx-4">Tockeconomics</div>
+            <div className="text-xl font-semibold my-4 mx-4">
              Initial Distribution
             </div>
             <div className="flex items-center">
