@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -6,7 +6,6 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 export function Navbar() {
   const sliderRef = useRef<Slider>(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const onHoverStyle = 'hover:text-blue-500 hover:underline';
 
@@ -35,18 +34,7 @@ export function Navbar() {
     }
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+  
   return (
     <div className="mx-4" onWheel={handleWheel}>
       <Slider {...sliderSettings} ref={sliderRef}>
@@ -57,7 +45,7 @@ export function Navbar() {
         <AnchorLink href="#team" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Team</AnchorLink>
         <AnchorLink href="#technicals" className={`text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Technicals</AnchorLink>
 
-        <AnchorLink href="#tokeconomics" className={`invisible md:visible text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Tokeconomics</AnchorLink>
+        <AnchorLink href="#tokeconomics" className={`invisible md:visigitble text-slate-600 text-sm font-semibold ${onHoverStyle}`}>Tokeconomics</AnchorLink>
       </Slider>
       <hr className="bg-slate-500"></hr>
     </div>
